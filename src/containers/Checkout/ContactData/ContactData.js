@@ -72,7 +72,7 @@ class ContactData extends Component {
                     type: 'email',
                     placeholder: 'Your E-Mail'
                 },
-                value: 'fastest',
+                value: '',
                 validation: {
                     required: true,
                     isEmail: true
@@ -88,7 +88,7 @@ class ContactData extends Component {
                         { value: 'cheapest', displayValue: 'Cheapest' }
                     ]
                 },
-                value: '',
+                value: 'fastest',
                 validation: {},
                 valid: true
             }
