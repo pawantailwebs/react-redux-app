@@ -63,19 +63,16 @@ class BurgerBuilder extends Component {
         let burger = this.props.error ? < p > Ingredients can 't be loaded!</p> : <Spinner />;
 
         if (this.props.ings) {
-            burger = ( <
-                Aux >
-                <
-                Burger ingredients = { this.props.ings }
-                /> <
-                BuildControls ingredientAdded = { this.props.onIngredientAdded }
+            burger = ( <Aux>
+                <Burger ingredients = { this.props.ings }/> 
+		<BuildControls ingredientAdded = { this.props.onIngredientAdded }
                 ingredientRemoved = { this.props.onIngredientRemoved }
                 disabled = { disabledInfo }
                 purchasable = { this.updatePurchaseState(this.props.ings) }
                 ordered = { this.purchaseHandler }
                 price = { this.props.price }
-                /> < /
-                Aux >
+                /> 
+		</Aux>
             );
             orderSummary = < OrderSummary
             ingredients = { this.props.ings }
@@ -85,16 +82,14 @@ class BurgerBuilder extends Component {
             />;
         }
         if (this.state.loading) {
-            orderSummary = < Spinner / > ;
+            orderSummary = <Spinner/> ;
         }
         // {salad: true, meat: false, ...}
-        return ( <
-            Aux >
-            <
-            Modal show = { this.state.purchasing }
-            modalClosed = { this.purchaseCancelHandler } > { orderSummary } <
-            /Modal> { burger } < /
-            Aux >
+        return ( <Aux>
+            <Modal show = { this.state.purchasing }
+            modalClosed = { this.purchaseCancelHandler } > { orderSummary } 
+	   </Modal> { burger } 
+	  </Aux >
         );
     }
 }
